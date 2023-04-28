@@ -7,6 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/new_payroll_form.css">
     <title>Employee payroll form</title>
+    <script defer src="../js/EmployeePayroll.js"></script>
+    <script defer src="../js/new_payroll_form.js"></script>
+    <script src="../js/utility.js"></script>
+    <script src="../js/site_properties.js"></script>
 </head>
 <body>
     <header class="header-content header">
@@ -19,7 +23,7 @@
         </div>
       </header>   
       <div class="form-content">
-        <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
+        <form class="form" action="#" oncancel="cancelForm()" onreset="resetForm()" onsubmit="save(event)">
 
           <div class="form-head">Employee Payroll form</div>
             <div class="row-content">
@@ -88,7 +92,7 @@
 
             <div class="row-content">
               <label class="label text" for="startDate">Start Date</label>
-              <div>
+              <div id="date">
                 <select id="day" name="Day">
                   <option value="1">01</option>
                   <option value="2">02</option>
@@ -144,6 +148,7 @@
                   <option value="2016">2016</option>
                 </select>
               </div>
+              <error-output class="date-error" for="startDate"></error-output>
             </div>
 
             <div class="row-content">
@@ -159,9 +164,5 @@
             </div> 
         </form>
       </div>
-      <script src="../js/new_payroll_form.js"></script>
-      <script src="../js/EmployeePayroll.js"></script>
-      <script src="../js/utility.js"></script>
-      <script src="../js/site_properties.js"></script>
 </body>
 </html>
